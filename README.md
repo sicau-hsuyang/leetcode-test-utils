@@ -167,3 +167,5 @@ function validPath(n: number, edges: number[][], source: number, destination: nu
 ```
 
 以上代码无法通过 leetcode 第 1971 题的所有 case。
+
+### 堆

@@ -17,5 +17,11 @@ import { SimpleDsu } from "./simple-dsu";
 import { GeneralDsu, GeneralDsuElement } from "./dsu";
 // #endregion
 
-export { arrToLinkedList, arrToDoubleLinkedList, arrToBinaryTree, SimpleDsu, GeneralDsu };
+// #region 堆
+import { Heap } from "./heap";
+import { SimpleMaxHeap } from "./simple-max-heap";
+import { SimpleMinHeap } from "./simple-min-heap";
+// #endregion
+
+export { arrToLinkedList, arrToDoubleLinkedList, arrToBinaryTree, SimpleDsu, GeneralDsu, Heap, SimpleMaxHeap, SimpleMinHeap };
 export type { GeneralLinkedNode, GeneralDoubleLinkedNode, GeneralTreeNode, GeneralDsuElement };
