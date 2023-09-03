@@ -19,7 +19,7 @@ export type GeneralTreeNode<T> = TreeNode<T> | null;
  * 数组转二叉树
  * @param  arr
  */
-export function arrToTree<T>(arr: T[]): GeneralTreeNode<T> {
+export function arrToBinaryTree<T>(arr: T[]): GeneralTreeNode<T> {
   if (!Array.isArray(arr) || arr.length === 0) {
     return null;
   }
@@ -30,6 +30,8 @@ export function arrToTree<T>(arr: T[]): GeneralTreeNode<T> {
   let parentNodes: GeneralTreeNode<T>[] = [];
   // 每次提取一层数据进行构建
   let levelChunk = arr.slice(offset, offset + size);
+  // 用来存储每层构建的结果
+  let buildChunk: GeneralTreeNode<T>[] = [];
   offset += size;
   while (levelChunk.length) {
     let counter = 0;
@@ -53,15 +55,15 @@ export function arrToTree<T>(arr: T[]): GeneralTreeNode<T> {
       } else if (parentNodes[parentIdx]) {
         // 挂载左右儿子节点
         if (isLeftChild) {
-          parentNodes[parentIdx].left = treeNode;
+          parentNodes[parentIdx]!.left = treeNode;
         } else {
-          parentNodes[parentIdx].right = treeNode;
+          parentNodes[parentIdx]!.right = treeNode;
         }
       }
-      levelChunk[i] = treeNode;
+      buildChunk[i] = treeNode;
     }
     // 把当前层的空节点过滤掉，重新构建关系
-    parentNodes = levelChunk.filter((x) => x !== null);
+    parentNodes = buildChunk.filter((x) => x !== null);
     // 计算出下一层的节点数
     size = 2 * counter;
     levelChunk = arr.slice(offset, offset + size);
