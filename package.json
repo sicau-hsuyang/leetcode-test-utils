@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "description": "leetcode case test helper to build initial data structure",
   "main": "dist/index.js",
+  "type": "module",
   "types": "index.d.ts",
   "scripts": {
     "dev": "tsc --watch",
@@ -50,5 +51,10 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "dependencies": {
+    "clipboardy": "^3.0.0",
+    "clipeasy": "^1.0.4",
+    "esm": "^3.2.25"
   }
 }
