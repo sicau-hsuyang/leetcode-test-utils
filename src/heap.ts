@@ -18,7 +18,6 @@ export class Heap<T> {
 
   constructor(...initElements: T[]) {
     this._data.push(...initElements);
-    this.buildHeap();
   }
 
   private _selfCompare = (compareVal: T, currentVal: T) => {

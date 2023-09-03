@@ -127,6 +127,8 @@ function app() {
 
 ### 并查集
 
+**因为 leetcode 要求你提交的是源代码，库文件在执行的时候已经写入到您的系统剪贴板中，你可以直接将其粘贴到 Leetcode 的网站中**
+
 简单版本：即集合的每个元素不需要存储节点数据，`数组索引 + 1`代表的就是节点信息，使用简单版本的并查集在某些场景下才能通过所有的`case`。
 
 如：leetcode 第 1971 题。
@@ -176,13 +178,13 @@ function validPath(n: number, edges: number[][], source: number, destination: nu
 import { Heap } from "leetcode-test-utils";
 
 export class SimpleMaxHeap extends Heap<number> {
-  constructor() {
-    super();
-    this.buildHeap();
+  constructor(...initElements: number[]) {
+    super(...initElements);
+    // 比较依据，若targetVal比目标节点大，则需要提前
     this.setCompare((targetVal, compareVal) => {
-      // 堆 在调整的时候 下滤的依据，若为true的话，则下滤，否则结束调整
-      return compareVal >= targetVal;
+      return targetVal >= compareVal;
     });
+    this.buildHeap();
   }
 
   getMax() {

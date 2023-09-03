@@ -3,10 +3,11 @@ import { Heap } from "./heap";
 export class SimpleMaxHeap extends Heap<number> {
   constructor(...initElements: number[]) {
     super(...initElements);
-    // 下滤依据，若targetVal比目标节点小，则需要下滤
+    // 比较依据，若targetVal比目标节点大，则需要提前
     this.setCompare((targetVal, compareVal) => {
-      return targetVal <= compareVal;
+      return targetVal >= compareVal;
     });
+    this.buildHeap();
   }
 
   getMax() {
