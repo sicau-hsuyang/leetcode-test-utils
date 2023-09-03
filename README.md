@@ -179,9 +179,9 @@ export class SimpleMaxHeap extends Heap<number> {
   constructor() {
     super();
     this.buildHeap();
-    this.setCompare((preVal, curVal) => {
+    this.setCompare((targetVal, compareVal) => {
       // 堆 在调整的时候 下滤的依据，若为true的话，则下滤，否则结束调整
-      return preVal >= curVal;
+      return compareVal >= targetVal;
     });
   }
 
