@@ -1,6 +1,6 @@
 {
   "name": "leetcode-test-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "leetcode case test helper to build initial data structure",
   "main": "dist/index.js",
   "types": "index.d.ts",

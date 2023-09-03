@@ -16,6 +16,11 @@ export class Heap<T> {
     return this._data.length;
   }
 
+  constructor(...initElements: T[]) {
+    this._data.push(...initElements);
+    this.buildHeap();
+  }
+
   private _selfCompare = (compareVal: T, currentVal: T) => {
     if (typeof this._compare !== "function") {
       throw `cannot compare without a compare function`;

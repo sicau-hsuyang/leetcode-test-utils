@@ -169,3 +169,40 @@ function validPath(n: number, edges: number[][], source: number, destination: nu
 以上代码无法通过 leetcode 第 1971 题的所有 case。
 
 ### 堆
+
+1、抽象堆
+
+```ts
+import { Heap } from "leetcode-test-utils";
+
+export class SimpleMaxHeap extends Heap<number> {
+  constructor() {
+    super();
+    this.buildHeap();
+    this.setCompare((preVal, curVal) => {
+      // 堆 在调整的时候 下滤的依据，若为true的话，则下滤，否则结束调整
+      return preVal >= curVal;
+    });
+  }
+
+  getMax() {
+    return this.getTop();
+  }
+
+  deleteMax() {
+    return this.deleteTop();
+  }
+}
+```
+
+上述例子示例了一个将抽象堆变成最大堆的一个过程
+
+2、直接使用预设的最大堆或最小堆
+
+```ts
+import { SimpleMaxHeap. SimpleMinHeap } from 'leetcode-test-utils'
+
+const minHeap = new SimpleMinHeap(1, 2, 3, 4, 5, 6);
+const maxHeap = new SimpleMaxHeap(1, 2, 3, 4, 5, 6);
+
+```

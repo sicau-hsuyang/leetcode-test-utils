@@ -1,8 +1,8 @@
 import { Heap } from "./heap";
 
 export class SimpleMinHeap extends Heap<number> {
-  constructor() {
-    super();
+  constructor(...initElements: number[]) {
+    super(...initElements);
 
     this.setCompare((preVal, curVal) => {
       return preVal <= curVal;

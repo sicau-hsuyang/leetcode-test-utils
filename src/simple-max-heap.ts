@@ -1,9 +1,9 @@
 import { Heap } from "./heap";
 
 export class SimpleMaxHeap extends Heap<number> {
-  constructor() {
-    super();
-    this.buildHeap();
+  constructor(...initElements: number[]) {
+    super(...initElements);
+
     this.setCompare((preVal, curVal) => {
       return preVal >= curVal;
     });
