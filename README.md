@@ -98,7 +98,7 @@ function app() {
 }
 ```
 
-上述得到的数据其实因为都包含了循环引用，因为序列化无法描述，您只需要理解作者想表达的意思即可。
+上述得到的数据其实因为都包含了循环引用，序列化无法描述，您只需要理解作者想表达的意思即可。
 
 ### 二叉树
 
@@ -121,5 +121,49 @@ function app() {
       }
    }
    */
+  // 和leetcode的创建规则保持一致
 }
 ```
+
+### 并查集
+
+简单版本：即集合的每个元素不需要存储节点数据，`数组索引 + 1`代表的就是节点信息，使用简单版本的并查集在某些场景下才能通过所有的`case`。
+
+如：leetcode 第 1971 题。
+
+```ts
+import { SimpleDsu } from "leetcode-test-utils";
+function validPath(n: number, edges: number[][], source: number, destination: number): boolean {
+  const dsu = new SimpleDsu();
+  dsu.init(n);
+  edges.forEach((edge) => {
+    // 题目节点编号用的是0——n-1，所以需要+1
+    dsu.union(edge[0] + 1, edge[1] + 1);
+  });
+  // 题目节点编号用的是0——n-1，所以需要+1
+  return dsu.find(source + 1) === dsu.find(destination + 1);
+}
+```
+
+通用版本：通用版本是在你确实需要用节点存储数据的时候再使用，会占用更多的内存空间，初始化的过程中也比较耗时
+
+```ts
+import { GeneralDsu } from "leetcode-test-utils";
+function validPath(n: number, edges: number[][], source: number, destination: number): boolean {
+  const dsu = new GeneralDsu();
+  let counter = 1;
+  dsu.init(
+    Array.from({
+      length: n,
+    }).map(() => {
+      return counter++;
+    })
+  );
+  edges.forEach((edge) => {
+    dsu.union(edge[0] + 1, edge[1] + 1);
+  });
+  return dsu.find(source + 1) === dsu.find(destination + 1);
+}
+```
+
+以上代码无法通过 leetcode 第 1971 题的所有 case。
