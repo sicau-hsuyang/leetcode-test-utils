@@ -10,5 +10,12 @@ import { arrToBinaryTree } from "./binary-tree";
 import type { GeneralTreeNode } from "./binary-tree";
 // #endregion
 
-export { arrToLinkedList, arrToDoubleLinkedList, arrToBinaryTree };
-export type { GeneralLinkedNode, GeneralDoubleLinkedNode, GeneralTreeNode };
+// #region 并查集
+// 简单版的并查集实现
+import { SimpleDsu } from "./simple-dsu";
+// 通用并查集实现
+import { GeneralDsu, GeneralDsuElement } from "./dsu";
+// #endregion
+
+export { arrToLinkedList, arrToDoubleLinkedList, arrToBinaryTree, SimpleDsu, GeneralDsu };
+export type { GeneralLinkedNode, GeneralDoubleLinkedNode, GeneralTreeNode, GeneralDsuElement };
