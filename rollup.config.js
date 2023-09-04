@@ -1,12 +1,18 @@
 import typescript from "rollup-plugin-typescript2";
-import resolve from '@rollup/plugin-node-resolve'
+import resolve from "@rollup/plugin-node-resolve";
 
 export default {
   input: "src/index.ts", // 入口文件路径
-  output: {
-    file: "dist/index.mjs", // 输出文件路径
-    format: "esm", // CommonJS 模块格式
-  },
+  output: [
+    {
+      file: "dist/index.mjs", // 输出文件路径
+      format: "esm", // ES6 模块格式
+    },
+    {
+      file: "dist/index.cjs", // 输出文件路径
+      format: "cjs", // CommonJS 模块格式
+    },
+  ],
   plugins: [
     resolve(),
     typescript({

@@ -2,9 +2,10 @@
   "name": "leetcode-test-utils",
   "version": "0.0.6",
   "description": "leetcode case test helper to build initial data structure",
-  "main": "dist/index.mjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
   "type": "module",
-  "types": "index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "tsc --watch",
     "build": "rollup -c",

@@ -15,6 +15,24 @@
 npm i leetcode-test-utils -S
 ```
 
+### commonjs
+
+```ts
+const { arrToLinkedList } = require("leetcode-test-utils");
+
+const list = arrToLinkedList([1, 2, 3, 4, 5, 6]);
+```
+
+### esm
+
+```js
+import { arrToLinkedList } from "leetcode-test-utils";
+
+const list = arrToLinkedList([1, 2, 3, 4, 5, 6]);
+```
+
+支持在 jest 环境下使用
+
 ## Demo
 
 ### 链表
