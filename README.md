@@ -17,6 +17,8 @@ npm i leetcode-test-utils -S
 
 ### commonjs
 
+新建 \[xxx\].cjs 文件，将下列内容复制进去即可
+
 ```ts
 const { arrToLinkedList } = require("leetcode-test-utils");
 
@@ -24,6 +26,8 @@ const list = arrToLinkedList([1, 2, 3, 4, 5, 6]);
 ```
 
 ### esm
+
+新建 \[xxx\].mjs 文件，将下列内容复制进去即可
 
 ```js
 import { arrToLinkedList } from "leetcode-test-utils";
