@@ -1,4 +1,4 @@
-import { Clipboard } from "clipeasy";
+import ncp from "node-clipboardy";
 const template = `
 class SimpleDsu {
   protected _set!: number[];
@@ -86,7 +86,7 @@ export class SimpleDsu {
 
   constructor(n: number) {
     this.init(n);
-    new Clipboard().write(template);
+    ncp.writeSync(template);
   }
 
   /**

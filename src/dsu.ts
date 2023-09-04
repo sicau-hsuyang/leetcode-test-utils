@@ -1,4 +1,4 @@
-import { Clipboard } from "clipeasy";
+import ncp from "node-clipboardy";
 
 export interface GeneralDsuElement<T> {
   /**
@@ -130,8 +130,7 @@ class GeneralDsu<T> {
   }
 }
 `;
-    const clip = new Clipboard();
-    clip.write(template);
+    ncp.writeSync(template);
   }
 
   /**
