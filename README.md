@@ -230,3 +230,16 @@ const minHeap = new SimpleMinHeap(1, 2, 3, 4, 5, 6);
 const maxHeap = new SimpleMaxHeap(1, 2, 3, 4, 5, 6);
 
 ```
+
+### 其它
+
+1、合并两个有序数组
+
+```ts
+import { merge, mergeByAsc, mergeByDesc } from "leetcode-test-utils";
+const arr1 = [1, 3, 5];
+const arr2 = [2, 4, 6];
+const result1 = merge(arr1, arr2, (val1, val2) => val1 < val2); // [1,2,3,4,5,6]
+const result2 = mergeByAsc(arr1, arr2); // [1,2,3,4,5,6]
+const result3 = mergeByDesc(arr1, arr2); // [6,5,4,3,2,1]
+```

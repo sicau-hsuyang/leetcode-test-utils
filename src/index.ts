@@ -23,5 +23,9 @@ import { SimpleMaxHeap } from "./simple-max-heap";
 import { SimpleMinHeap } from "./simple-min-heap";
 // #endregion
 
-export { arrToLinkedList, arrToDoubleLinkedList, arrToBinaryTree, SimpleDsu, GeneralDsu, Heap, SimpleMaxHeap, SimpleMinHeap };
+// #region 杂项
+import { merge, mergeByAsc, mergeByDesc } from "./merge";
+// #endregion
+
+export { arrToLinkedList, arrToDoubleLinkedList, arrToBinaryTree, SimpleDsu, GeneralDsu, Heap, SimpleMaxHeap, SimpleMinHeap, merge, mergeByAsc, mergeByDesc };
 export type { GeneralLinkedNode, GeneralDoubleLinkedNode, GeneralTreeNode, GeneralDsuElement };
