@@ -44,7 +44,7 @@ class GeneralDsu<T> {
    * @param target
    * @returns
    */
-  private _equalCondition = (data: T, target: T) => {
+  private _equalCondition = (data: T, target: unknown) => {
     return data === target;
   };
 
@@ -52,7 +52,7 @@ class GeneralDsu<T> {
    * 设置判等条件
    * @param outerEqualCondition
    */
-  public setEqual(outerEqualCondition: (data: T, target: T) => boolean) {
+  public setEqual(outerEqualCondition: (data: T, target: unknown) => boolean) {
     this._equalCondition = outerEqualCondition;
   }
 
@@ -74,7 +74,7 @@ class GeneralDsu<T> {
    * 查找元素是否在集合中，若存在，则返回根节点所在的索引，若不在，则返回-1
    * @param target 目标元素
    */
-  find(target: T): number {
+  find(target: unknown): number {
     for (let i = 0; i < this._set.length; i++) {
       // 元素在数组中能够被找到
       if (this._equalCondition(this._set[i].dat, target)) {
@@ -158,7 +158,7 @@ class GeneralDsu<T> {
    * @param target
    * @returns
    */
-  private _equalCondition = (data: T, target: T) => {
+  private _equalCondition = (data: T, target: unknown) => {
     return data === target;
   };
 
@@ -166,7 +166,7 @@ class GeneralDsu<T> {
    * 设置判等条件
    * @param outerEqualCondition
    */
-  public setEqual(outerEqualCondition: (data: T, target: T) => boolean) {
+  public setEqual(outerEqualCondition: (data: T, target: unknown) => boolean) {
     this._equalCondition = outerEqualCondition;
   }
 
@@ -188,7 +188,7 @@ class GeneralDsu<T> {
    * 查找元素是否在集合中，若存在，则返回根节点所在的索引，若不在，则返回-1
    * @param target 目标元素
    */
-  find(target: T): number {
+  find(target: unknown): number {
     for (let i = 0; i < this._set.length; i++) {
       // 元素在数组中能够被找到
       if (this._equalCondition(this._set[i].dat, target)) {
