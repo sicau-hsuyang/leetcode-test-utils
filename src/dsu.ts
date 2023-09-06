@@ -32,6 +32,13 @@ class GeneralDsu<T> {
   private _set: GeneralDsuElement<T>[] = [];
 
   /**
+   * 外部访问的集合
+   */
+  public get dataSet() {
+    return this._set;
+  }
+
+  /**
    * 判等依据
    * @param data
    * @param target
@@ -137,6 +144,13 @@ class GeneralDsu<T> {
    * 集合存储域
    */
   private _set: GeneralDsuElement<T>[] = [];
+
+  /**
+   * 外部访问的集合
+   */
+  public get dataSet() {
+    return this._set;
+  }
 
   /**
    * 判等依据
