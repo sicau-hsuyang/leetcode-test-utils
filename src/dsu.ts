@@ -126,7 +126,7 @@ class GeneralDsu<T> {
    * 统计并查集中子树的个数
    * @returns
    */
-  counter() {
+  count() {
     let size = 0;
     this._set.forEach((v) => {
       if (v.parent < 0) {
@@ -240,7 +240,7 @@ class GeneralDsu<T> {
    * 统计并查集中子树的个数
    * @returns
    */
-  counter() {
+  count() {
     let size = 0;
     this._set.forEach((v) => {
       if (v.parent < 0) {
